@@ -35,7 +35,7 @@ export function Hero() {
                     >
                         Before You Automate Anything, <br />
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-                            Let's Figure Out What's Worth Automating
+                            Let&apos;s Figure Out What&apos;s Worth Automating
                         </span>
                     </motion.h1>
 

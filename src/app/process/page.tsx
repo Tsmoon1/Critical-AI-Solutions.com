@@ -3,7 +3,6 @@
 import { Container } from "@/components/ui/container";
 import { motion } from "framer-motion";
 import {
-    Search,
     BrainCircuit,
     Rocket,
     BarChart3,
@@ -113,7 +112,7 @@ export default function ProcessPage() {
                             <h3 className="text-3xl font-bold text-white">The Diagnostic</h3>
                         </div>
                         <div className="hidden md:block max-w-md text-right text-zinc-400 text-sm">
-                            "Finding the three or four places where better systems create disproportionate returns."
+                            &ldquo;Finding the three or four places where better systems create disproportionate returns.&rdquo;
                         </div>
                     </div>
 
@@ -144,14 +143,14 @@ export default function ProcessPage() {
                     </div>
 
                     <div className="mt-8 p-6 rounded-xl bg-blue-900/10 border border-blue-500/20 text-blue-200 text-sm">
-                        <strong>The Goal:</strong> The diagnostic phase isn't about cataloging everything you do. It's about finding strategic leverage points.
+                        <strong>The Goal:</strong> The diagnostic phase isn&apos;t about cataloging everything you do. It&apos;s about finding strategic leverage points.
                     </div>
                 </section>
 
 
                 {/* SUBSEQUENT PHASES (Summary) */}
                 <div className="grid grid-cols-1 gap-12">
-                    {subsequentPhases.map((step, index) => (
+                    {subsequentPhases.map((step) => (
                         <motion.div
                             key={step.id}
                             initial={{ opacity: 0, y: 20 }}
