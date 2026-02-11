@@ -59,7 +59,7 @@ const features = [
     },
     {
         title: "Strategic Training",
-        description: "The best system is worthless if your team treats it like a foreign object. We build training around actual daily workflows so your people can maintain and adapt the tools without calling us.",
+        description: "Don't just build tools; build tools that leverage your team.",
         icon: Globe,
         className: "md:col-span-2",
     },
