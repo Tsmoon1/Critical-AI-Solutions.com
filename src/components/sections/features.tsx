@@ -9,7 +9,6 @@ import {
     ArrowLeftRight,
     TrendingUp,
     Archive,
-    Globe
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
@@ -17,13 +16,13 @@ import { cn } from "@/lib/utils";
 const features = [
     {
         title: "The Money Trail",
-        description: "We start where your cash actually flows, not in theory, but literally. How do customers find you? What's the exact path from first contact to payment?",
+        description: "We start where your cash actually flows. How do customers find you? What's the exact path from first contact to payment?",
         icon: Banknote,
         className: "md:col-span-1",
     },
     {
         title: "The Pain Points",
-        description: "We identify the tasks that make you want to throw your computer out the window. And the tasks you redo most often?",
+        description: "What tasks do you dread? What do you redo most often? That's where automation either saves you or makes things worse.",
         icon: Flame,
         className: "md:col-span-1",
     },
@@ -53,14 +52,8 @@ const features = [
     },
     {
         title: "The Tool Graveyard",
-        description: "What software did you buy that nobody is using? Usually, it's not the tool; it's that the tool didn't fit the actual workflow, or nobody had time to learn it.",
+        description: "What software did you buy that nobody uses? That's not a tool problem—that's a process problem. We make sure it doesn't happen again.",
         icon: Archive,
-        className: "md:col-span-2",
-    },
-    {
-        title: "Strategic Training",
-        description: "Don't just build tools; build tools that leverage your team.",
-        icon: Globe,
         className: "md:col-span-2",
     },
 ];
@@ -71,11 +64,9 @@ export function Features() {
             <Container>
                 <div className="mx-auto max-w-2xl text-center mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        Why <span className="text-blue-500">Critical AI?</span>
+                        The Questions Nobody Else Asks{" "}
+                        <span className="text-blue-500">Before Selling You Tools</span>
                     </h2>
-                    <p className="mt-4 text-lg text-zinc-400">
-                        We help you navigate the noise and build systems that actually work for your business.
-                    </p>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8">

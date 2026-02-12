@@ -33,9 +33,9 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="bg-gradient-to-br from-white via-white to-zinc-500 bg-clip-text text-4xl font-bold tracking-tight text-transparent sm:text-6xl"
                     >
-                        Before You Automate Anything, <br />
+                        We Help Small Businesses Avoid the 95% Failure Rate by{" "}
                         <span className="bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
-                            Let&apos;s Figure Out What&apos;s Worth Automating
+                            Diagnosing What NOT to Automate First
                         </span>
                     </motion.h1>
 
@@ -46,7 +46,7 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="mt-6 text-lg leading-8 text-zinc-400 sm:text-xl max-w-2xl mx-auto"
                     >
-                        95% of AI implementations fail—usually because nobody asked the right questions first. We help small businesses cut through the hype, avoid costly mistakes, and implement AI that actually fits how you work.
+                        Most automation projects fail because businesses automate broken processes. We fix the process first, identify the 20% that still needs human judgment, then automate the rest&mdash;so you get efficiency without losing what makes customers choose you.
                     </motion.p>
 
                     {/* Buttons */}
