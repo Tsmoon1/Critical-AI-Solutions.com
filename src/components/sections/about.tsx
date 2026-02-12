@@ -29,7 +29,7 @@ export function About() {
                             <h2 className="text-sm font-mono text-blue-500 mb-2">WHO&apos;S BEHIND THIS</h2>
                             <h3 className="text-2xl font-bold text-white mb-4">Tim Moon</h3>
                             <p className="text-zinc-400 leading-relaxed">
-                                I spent twenty years in educational leadership watching schools waste millions on technology that promised transformation but delivered distraction. The pattern in business is identical: 95% of AI implementations fail because organizations automate before they diagnose. I founded Critical AI Solutions to help small businesses avoid that expensive mistake&mdash;by identifying what <em className="text-zinc-300 not-italic font-medium">not</em> to automate before they build their operations around the wrong systems.
+                                I spent twenty years in educational leadership watching schools waste millions on technology that promised transformation but delivered distraction. The pattern in business is identical: 95% of AI implementations fail because organizations automate before they diagnose. I have also spent thousands of hours researching, using, and teaching AI workflows and tools. I founded Critical AI Solutions to help small businesses avoid that expensive mistake&mdash;by identifying what <em className="text-zinc-300 not-italic font-medium">not</em> to automate before they build their operations around the wrong systems.
                             </p>
                         </div>
                     </div>
