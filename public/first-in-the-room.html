@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First in the Room — AI Out Loud</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #FFFFFF;
+      color: #1E1E1E;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── TOKENS — Tech Innovation (light adaptation) ──────────── */
+    :root {
+      --navy:   #1E1E1E;
+      --orange: #0066FF;
+      --amber:  #00BFCF;
+      --blue:   #0044BB;
+      --cream:  #EEF5FF;
+      --white:  #FFFFFF;
+      --mid:    #5A5A6A;
+      --radius: 12px;
+    }
+
+    /* ── NAV ──────────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 18px 48px;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,102,255,0.1);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--orange); }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--mid);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--orange); }
+    .nav-cta {
+      background: var(--navy);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 600 !important;
+      transition: background .2s !important;
+    }
+    .nav-cta:hover { background: var(--orange) !important; color: var(--white) !important; }
+
+    /* ── HERO ─────────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      background: linear-gradient(135deg, #0066FF 0%, #0088FF 50%, #00BFCF 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg-circle {
+      position: absolute; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-bg-circle.c1 { width: 600px; height: 600px; top: -100px; right: -150px; }
+    .hero-bg-circle.c2 { width: 400px; height: 400px; bottom: -80px; left: -100px; background: radial-gradient(circle, rgba(0,191,207,0.25) 0%, transparent 70%); }
+
+    .hero-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 40px;
+      margin-bottom: 32px;
+    }
+    .hero-kicker::before { content: '◎'; font-size: 0.7rem; }
+
+    #hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      max-width: 800px;
+      margin-bottom: 12px;
+    }
+    #hero h1 em {
+      font-style: italic;
+      color: var(--orange);
+    }
+
+    .hero-sub {
+      font-size: 1.125rem;
+      color: rgba(255,253,248,0.6);
+      max-width: 520px;
+      margin: 0 auto 56px;
+      font-weight: 300;
+    }
+
+    .hero-question {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.3rem, 3vw, 1.9rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 40px;
+      max-width: 640px;
+    }
+
+    .answer-tiles {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center;
+      max-width: 780px;
+    }
+    .tile {
+      background: rgba(255,253,248,0.06);
+      border: 1px solid rgba(255,253,248,0.14);
+      color: rgba(255,253,248,0.88);
+      padding: 18px 26px;
+      border-radius: var(--radius);
+      font-size: 0.95rem;
+      font-weight: 400;
+      cursor: pointer;
+      transition: all .25s;
+      text-align: left;
+      max-width: 340px;
+      line-height: 1.4;
+      backdrop-filter: blur(8px);
+    }
+    .tile:hover {
+      background: rgba(255,255,255,0.25);
+      border-color: rgba(255,255,255,0.6);
+      color: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    }
+    .tile-arrow { display: inline-block; margin-left: 8px; transition: transform .2s; }
+    .tile:hover .tile-arrow { transform: translateX(4px); }
+
+    .tile-response {
+      display: none;
+      margin-top: 32px;
+      background: rgba(255,253,248,0.08);
+      border: 1px solid rgba(255,253,248,0.15);
+      border-left: 3px solid var(--orange);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      max-width: 520px;
+      text-align: left;
+      color: rgba(255,253,248,0.85);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      animation: fadeUp .4s ease;
+    }
+    .tile-response.visible { display: block; }
+    .tile-response strong { color: #7FFFFF; display: block; margin-bottom: 6px; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── HERO HOSTS ───────────────────────────────────────────── */
+    .hero-hosts {
+      display: flex; align-items: center; gap: 32px;
+      margin-bottom: 48px;
+      justify-content: center;
+    }
+    .hero-host {
+      display: flex; flex-direction: column; align-items: center; gap: 12px;
+    }
+    .hero-host-img {
+      width: 110px; height: 110px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.6);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+      transition: transform .25s, box-shadow .25s;
+      display: block;
+      flex-shrink: 0;
+    }
+    .hero-host-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.3);
+    }
+    .hero-host-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.04em;
+    }
+    .hero-host-role {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hero-hosts-divider {
+      font-size: 1.5rem;
+      color: rgba(255,255,255,0.3);
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+
+    .hero-scroll {
+      margin-top: 64px;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: rgba(255,253,248,0.35);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      animation: bounce 2s infinite;
+    }
+    .hero-scroll svg { opacity: .4; }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(6px); }
+    }
+
+    /* ── SECTION SHARED ───────────────────────────────────────── */
+    section { padding: 96px 24px; }
+    .container { max-width: 1080px; margin: 0 auto; }
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.9rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+      margin-bottom: 16px;
+    }
+    .section-body {
+      font-size: 1.05rem;
+      color: var(--mid);
+      max-width: 580px;
+      margin-bottom: 56px;
+    }
+
+    /* ── HOSTS ────────────────────────────────────────────────── */
+    #hosts { background: var(--cream); }
+    .hosts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 48px;
+    }
+    .host-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px 36px;
+      border: 1px solid rgba(26,26,46,0.07);
+      position: relative;
+      overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .host-card:hover {
+      box-shadow: 0 16px 48px rgba(26,26,46,0.1);
+      transform: translateY(-4px);
+    }
+    .host-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+    }
+    .host-card.ila::before { background: linear-gradient(90deg, #0066FF, #00BFCF); }
+    .host-card.tim::before { background: linear-gradient(90deg, #00BFCF, #0066FF); }
+
+    .host-avatar {
+      width: 72px; height: 72px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+    .host-card.ila .host-avatar { background: linear-gradient(135deg, #0066FF, #00BFCF); }
+    .host-card.tim .host-avatar { background: linear-gradient(135deg, #00BFCF, #0044BB); }
+
+    .host-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .host-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 20px;
+    }
+    .host-bio {
+      font-size: 0.95rem;
+      color: #3A3A4E;
+      line-height: 1.75;
+    }
+    .host-quote {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background: var(--cream);
+      border-radius: 8px;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--navy);
+      border-left: 3px solid var(--orange);
+    }
+    .host-card.tim .host-quote { border-left-color: var(--amber); }
+
+    /* ── LEARNING MAP ─────────────────────────────────────────── */
+    #map { background: var(--white); }
+    .map-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-top: 48px;
+    }
+    .milestone {
+      border: 1px solid rgba(26,26,46,0.1);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      cursor: pointer;
+      transition: all .25s;
+      position: relative;
+      overflow: hidden;
+    }
+    .milestone:hover {
+      border-color: var(--orange);
+      box-shadow: 0 8px 28px rgba(0,102,255,0.12);
+      transform: translateY(-2px);
+    }
+    .milestone-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: rgba(26,26,46,0.07);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .milestone-icon {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .milestone-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .milestone-desc {
+      font-size: 0.85rem;
+      color: var(--mid);
+      line-height: 1.5;
+    }
+    .milestone-tag {
+      display: inline-block;
+      margin-top: 14px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: var(--cream);
+      color: var(--orange);
+    }
+
+    /* ── EXPERIMENT ───────────────────────────────────────────── */
+    #experiment {
+      background: linear-gradient(135deg, #0055EE 0%, #0077FF 60%, #00AABF 100%);
+      color: var(--white);
+    }
+    #experiment .section-title { color: var(--white); }
+    .experiment-card {
+      background: rgba(255,253,248,0.05);
+      border: 1px solid rgba(255,253,248,0.12);
+      border-radius: 20px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+    .exp-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245,166,35,0.2);
+      color: var(--amber);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 40px;
+      margin-bottom: 20px;
+    }
+    .exp-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--white);
+    }
+    .exp-desc {
+      color: rgba(255,253,248,0.65);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .exp-listen-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--orange);
+      color: var(--white);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all .25s;
+      cursor: pointer;
+      border: none;
+    }
+    .exp-listen-btn:hover {
+      background: var(--amber);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(245,166,35,0.3);
+    }
+    .exp-try-box {
+      background: rgba(255,253,248,0.08);
+      border: 1px solid rgba(255,253,248,0.15);
+      border-radius: var(--radius);
+      padding: 32px;
+    }
+    .exp-try-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 12px;
+    }
+    .exp-prompt {
+      font-family: 'DM Sans', monospace;
+      font-size: 0.9rem;
+      color: rgba(255,253,248,0.9);
+      background: rgba(0,0,0,0.2);
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      border-left: 3px solid var(--orange);
+      font-style: italic;
+    }
+    .copy-btn {
+      background: transparent;
+      border: 1px solid rgba(255,253,248,0.2);
+      color: rgba(255,253,248,0.6);
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: all .2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .copy-btn:hover {
+      border-color: var(--amber);
+      color: var(--amber);
+    }
+    .copy-btn.copied { color: #5DD47A; border-color: #5DD47A; }
+
+    /* ── PROOF OF PLAY ────────────────────────────────────────── */
+    #proof { background: var(--cream); }
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .proof-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      border: 1px solid rgba(26,26,46,0.07);
+      transition: box-shadow .2s;
+    }
+    .proof-card:hover { box-shadow: 0 6px 20px rgba(26,26,46,0.08); }
+    .proof-card-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--orange);
+      margin-bottom: 8px;
+    }
+    .proof-card-text {
+      font-size: 0.95rem;
+      color: var(--navy);
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .proof-card-meta {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: var(--mid);
+    }
+
+    .proof-submit {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 40px;
+      border: 2px dashed rgba(26,26,46,0.15);
+      text-align: center;
+      transition: border-color .2s;
+    }
+    .proof-submit:hover { border-color: var(--orange); }
+    .proof-submit h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .proof-submit p {
+      font-size: 0.9rem;
+      color: var(--mid);
+      margin-bottom: 24px;
+    }
+    .proof-form {
+      display: flex; flex-direction: column; gap: 12px;
+      max-width: 560px; margin: 0 auto;
+    }
+    .proof-form input,
+    .proof-form textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid rgba(26,26,46,0.15);
+      border-radius: 8px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      color: var(--navy);
+      background: var(--white);
+      transition: border-color .2s;
+      resize: none;
+    }
+    .proof-form input:focus,
+    .proof-form textarea:focus {
+      outline: none;
+      border-color: var(--orange);
+    }
+    .proof-form button {
+      background: var(--navy);
+      color: var(--white);
+      border: none;
+      padding: 14px 32px;
+      border-radius: 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+      align-self: center;
+    }
+    .proof-form button:hover { background: var(--orange); }
+    .proof-success {
+      display: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .proof-success.show { display: block; animation: fadeUp .4s ease; }
+
+    /* ── FOOTER CTA ───────────────────────────────────────────── */
+    #stay {
+      background: linear-gradient(135deg, #0044BB 0%, #0066FF 60%, #00BFCF 100%);
+      color: var(--white);
+      text-align: center;
+      padding: 96px 24px;
+    }
+    #stay .section-title { color: var(--white); margin: 0 auto 16px; }
+    #stay .section-body { color: rgba(255,253,248,0.6); margin: 0 auto 48px; text-align: center; }
+    .stay-form {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      justify-content: center;
+      max-width: 500px; margin: 0 auto 48px;
+    }
+    .stay-form input {
+      flex: 1; min-width: 220px;
+      padding: 14px 20px;
+      border-radius: 40px;
+      border: 1px solid rgba(255,253,248,0.2);
+      background: rgba(255,253,248,0.08);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      transition: border-color .2s;
+    }
+    .stay-form input::placeholder { color: rgba(255,253,248,0.35); }
+    .stay-form input:focus { outline: none; border-color: var(--amber); }
+    .stay-form button {
+      background: var(--orange);
+      color: var(--white);
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s;
+      white-space: nowrap;
+    }
+    .stay-form button:hover { background: var(--amber); }
+    .stay-note {
+      font-size: 0.78rem;
+      color: rgba(255,253,248,0.3);
+      margin-bottom: 56px;
+    }
+
+    .platform-links {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      justify-content: center;
+    }
+    .platform-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: rgba(255,253,248,0.08);
+      border: 1px solid rgba(255,253,248,0.15);
+      color: rgba(255,253,248,0.75);
+      text-decoration: none;
+      padding: 12px 22px;
+      border-radius: 40px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: all .2s;
+    }
+    .platform-btn:hover {
+      background: rgba(255,253,248,0.15);
+      color: var(--white);
+      border-color: rgba(255,253,248,0.3);
+      transform: translateY(-2px);
+    }
+
+    footer {
+      background: #003EAA;
+      padding: 24px;
+      text-align: center;
+      font-size: 0.8rem;
+      color: rgba(255,253,248,0.25);
+      border-top: 1px solid rgba(255,253,248,0.06);
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .hosts-grid { grid-template-columns: 1fr; }
+      .experiment-card { grid-template-columns: 1fr; gap: 32px; }
+      .stay-form { flex-direction: column; align-items: stretch; }
+      .stay-form input, .stay-form button { min-width: unset; width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-logo">AI <span>Out Loud</span></div>
+  <ul class="nav-links">
+    <li><a href="#hosts">The Hosts</a></li>
+    <li><a href="#map">Your Journey</a></li>
+    <li><a href="#experiment">This Week</a></li>
+    <li><a href="#proof">Community</a></li>
+    <li><a href="#stay" class="nav-cta">Stay in the Room</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ────────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
+
+  <div class="hero-kicker">A Podcast for AI Beginners</div>
+
+  <h1>Be <em>First</em><br>in the Room.</h1>
+  <p class="hero-sub">AI is moving fast. We're here so you don't get left behind — you get to arrive first.</p>
+
+      <div class="hero-hosts">
+      <div class="hero-host">
+        <canvas id="ila-canvas" class="hero-host-img" width="110" height="110"></canvas>
+        <div class="hero-host-name">Ila Lama</div>
+        <div class="hero-host-role">Co-Host</div>
+      </div>
+      <div class="hero-hosts-divider">&amp;</div>
+      <div class="hero-host">
+        <canvas id="tim-canvas" class="hero-host-img" width="110" height="110"></canvas>
+        <div class="hero-host-name">Tim Moon</div>
+        <div class="hero-host-role">Co-Host</div>
+      </div>
+    </div>
+
+  <p class="hero-question">"What's one thing about AI you've been afraid to ask?"</p>
+
+  <div class="answer-tiles" id="tiles">
+    <div class="tile" onclick="showResponse('start')">
+      Honestly? Where to even start. <span class="tile-arrow">→</span>
+    </div>
+    <div class="tile" onclick="showResponse('replace')">
+      Whether it's going to replace me. <span class="tile-arrow">→</span>
+    </div>
+    <div class="tile" onclick="showResponse('behind')">
+      If I'm already too far behind. <span class="tile-arrow">→</span>
+    </div>
+  </div>
+
+  <div class="tile-response" id="resp-start">
+    <strong>Start here →</strong>
+    You're not behind. You're exactly on time. Episode 1 — "Your First Conversation" — is a ten-minute walk-in with no prior knowledge required. We built it for this exact moment.
+  </div>
+  <div class="tile-response" id="resp-replace">
+    <strong>This one matters →</strong>
+    It's the most human question in the room, and it deserves a real answer — not reassurance. Episode 3 — "AI and You" — is where we take it on directly. No spin. Just honest thinking.
+  </div>
+  <div class="tile-response" id="resp-behind">
+    <strong>You're not. →</strong>
+    Nobody was born knowing this. We're all learning out loud. Episode 2 — "Why Beginners Have the Advantage" — will change how you think about where you're standing right now.
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll to explore</span>
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+      <path d="M8 3v10M3 9l5 5 5-5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ── HOSTS ────────────────────────────────────────────────────── -->
+<section id="hosts">
+  <div class="container">
+    <span class="section-label">The Hosts</span>
+    <h2 class="section-title">Two people learning out loud,<br>so you don't have to learn alone.</h2>
+    <p class="section-body">Different generations. Different paths. One shared conviction: the best way to learn AI is to pick it up and play.</p>
+
+    <div class="hosts-grid">
+
+      <div class="host-card ila">
+        <div class="host-avatar">IL</div>
+        <div class="host-name">Ila Lama</div>
+        <div class="host-title">Systems Thinker · Storyteller · AI for Impact</div>
+        <p class="host-bio">
+          Ila is what happens when systems meets storytelling. An IT project management professional with roots in product marketing, brand strategy, creative direction, and community building — she uses all of it. Outside her 9-to-5 she mentors students and professionals, guest lectures, and develops brand and content strategy.
+          <br><br>
+          Her specialty: equipping people with the tools, confidence, and voice to own every room they walk into. Her research into <em>AI for Impact</em> explores how these tools shape access, equity, and human connection — because AI is moving fast, and the people it affects most are often the last ones in the room.
+          <br><br>
+          At her core, she is a storyteller — through written work, spoken word, and visual art. As a 1.5 gen immigrant and woman of color, storytelling is how she's always made sense of the world.
+        </p>
+        <div class="host-quote">"How can we build with these tools while still thinking critically, staying emotionally present, and honoring what makes us human?"</div>
+      </div>
+
+      <div class="host-card tim">
+        <div class="host-avatar">TM</div>
+        <div class="host-name">Tim Moon</div>
+        <div class="host-title">Educator · Rhetorician · AI Consultant · Author</div>
+        <p class="host-bio">
+          Tim Moon spent decades teaching people how to think — rhetoric, logic, history, argumentation — before AI arrived and handed him the most interesting classroom he's ever walked into. He's the Founder of Critical AI Solutions and an Adjunct Instructor at Wayland Baptist University, where he teaches "Professional Readiness in the Age of AI" to high school seniors, college freshmen, and working adults starting over.
+          <br><br>
+          Before AI, Tim served as Headmaster at multiple K-12 institutions across the country, earning accreditations, building programs, and learning that most resistance to change is really just fear with better posture. He holds an M.A. in History from Portland State University and a classical education background that makes him deeply skeptical of hype — and genuinely excited when something actually works.
+          <br><br>
+          He's also a published author with books on faith, reason, and the human interior — plus a novel. He writes at <a href="https://timmoon.substack.com" target="_blank" style="color: var(--blue);">timmoon.substack.com</a>. His job on this show: make sure no one gets left at the door.
+        </p>
+        <div class="host-quote">"The best time to learn this was last year. The second best time is right now — and it's a lot more fun than you think."</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── LEARNING MAP ──────────────────────────────────────────────── -->
+<section id="map">
+  <div class="container">
+    <span class="section-label">Your Journey</span>
+    <h2 class="section-title">You're not behind.<br>You're at the beginning.</h2>
+    <p class="section-body">Every episode is a skill you'll actually own. Not content to consume — proof that you showed up and did the thing.</p>
+
+    <div class="map-grid">
+      <div class="milestone">
+        <div class="milestone-number">01</div>
+        <span class="milestone-icon">💬</span>
+        <div class="milestone-title">Your First Conversation</div>
+        <div class="milestone-desc">You open ChatGPT, Claude, or Gemini for the first time and say something. We show you what to say.</div>
+        <span class="milestone-tag">Beginner · Ep. 1</span>
+      </div>
+      <div class="milestone">
+        <div class="milestone-number">02</div>
+        <span class="milestone-icon">🧠</span>
+        <div class="milestone-title">Why Beginners Win</div>
+        <div class="milestone-desc">The surprising advantage of starting fresh. No bad habits. No assumptions. Just curiosity.</div>
+        <span class="milestone-tag">Mindset · Ep. 2</span>
+      </div>
+      <div class="milestone">
+        <div class="milestone-number">03</div>
+        <span class="milestone-icon">🪞</span>
+        <div class="milestone-title">AI and You</div>
+        <div class="milestone-desc">The real talk about what AI can and can't replace — and why the question matters more than the answer.</div>
+        <span class="milestone-tag">Reality Check · Ep. 3</span>
+      </div>
+      <div class="milestone">
+        <div class="milestone-number">04</div>
+        <span class="milestone-icon">🖼️</span>
+        <div class="milestone-title">Your First Image</div>
+        <div class="milestone-desc">You describe something. AI makes it visual. We play with what that means — and what it's good for.</div>
+        <span class="milestone-tag">Creative · Ep. 4</span>
+      </div>
+      <div class="milestone">
+        <div class="milestone-number">05</div>
+        <span class="milestone-icon">✍️</span>
+        <div class="milestone-title">A Prompt You're Proud Of</div>
+        <div class="milestone-desc">The moment you write something and the AI gives back exactly what you meant. That's the milestone.</div>
+        <span class="milestone-tag">Skill · Ep. 5</span>
+      </div>
+      <div class="milestone">
+        <div class="milestone-number">06</div>
+        <span class="milestone-icon">⚙️</span>
+        <div class="milestone-title">Your First Automation</div>
+        <div class="milestone-desc">You automate one small thing. You get 10 minutes back. You see the bigger picture start to open.</div>
+        <span class="milestone-tag">Practical · Ep. 6</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THIS WEEK'S EXPERIMENT ────────────────────────────────────── -->
+<section id="experiment">
+  <div class="container">
+    <span class="section-label" style="color: var(--amber);">This Week</span>
+    <h2 class="section-title" style="color: var(--white); margin-bottom: 40px;">Don't just listen.<br>Try it right now.</h2>
+
+    <div class="experiment-card">
+      <div>
+        <div class="exp-badge">🎙 Featured Episode</div>
+        <div class="exp-title">Episode 1: Your First Conversation</div>
+        <p class="exp-desc">We walk you through opening an AI tool for the first time — live, unscripted, and with zero pretending it's easy. Because it's actually easier than you think, once someone's in the room with you.</p>
+        <button class="exp-listen-btn">▶ Listen Now</button>
+      </div>
+      <div class="exp-try-box">
+        <div class="exp-try-label">🧪 This Week's Experiment</div>
+        <div class="exp-prompt" id="prompt-text">
+          "I'm completely new to AI. Explain to me what you can help me with — like I've never used a tool like you before. Be honest about what you're not good at too."
+        </div>
+        <button class="copy-btn" id="copy-btn" onclick="copyPrompt()">Copy this prompt</button>
+        <p style="margin-top: 16px; font-size: 0.82rem; color: rgba(255,253,248,0.45); line-height: 1.6;">
+          Paste this into ChatGPT, Claude, or any AI tool. See what happens. Then scroll down and tell us — we want to know.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROOF OF PLAY ─────────────────────────────────────────────── -->
+<section id="proof">
+  <div class="container">
+    <span class="section-label">Proof of Play</span>
+    <h2 class="section-title">Real beginners.<br>Real experiments.</h2>
+    <p class="section-body">No polished results. No experts. Just people who tried something and came back to tell us what happened. This is the whole point.</p>
+
+    <div class="proof-grid">
+      <div class="proof-card">
+        <div class="proof-card-name">Sandra M. · Ep. 1</div>
+        <p class="proof-card-text">"I copied the prompt and it told me it wasn't good at remembering things between conversations. I had no idea. That alone was worth it."</p>
+        <div class="proof-card-meta">Tool used: ChatGPT · First time ever</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-name">James R. · Ep. 1</div>
+        <p class="proof-card-text">"Honestly I expected it to feel like talking to a robot. It felt more like talking to a very patient colleague. I don't know what I expected."</p>
+        <div class="proof-card-meta">Tool used: Claude · First time ever</div>
+      </div>
+      <div class="proof-card">
+        <div class="proof-card-name">Maria T. · Ep. 2</div>
+        <p class="proof-card-text">"I asked it to help me write a birthday message for my dad in Spanish because my Spanish isn't great anymore. It was beautiful. I cried a little."</p>
+        <div class="proof-card-meta">Tool used: ChatGPT · Week 2</div>
+      </div>
+    </div>
+
+    <div class="proof-submit">
+      <h3>What did you try?</h3>
+      <p>One experiment. One sentence. That's all we need. You'll show up on this page.</p>
+      <form class="proof-form" id="proof-form" onsubmit="submitProof(event)">
+        <input type="text" placeholder="Your first name (or stay anonymous — 'A Listener' works)" id="proof-name" />
+        <textarea rows="3" placeholder="What did you try, and what surprised you?" id="proof-text"></textarea>
+        <input type="text" placeholder="Which episode + tool did you use?" id="proof-meta" />
+        <button type="submit">Add my experiment →</button>
+      </form>
+      <p class="proof-success" id="proof-success">✓ You're on the board. Welcome to the room.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── STAY IN THE ROOM ──────────────────────────────────────────── -->
+<section id="stay">
+  <div class="container">
+    <span class="section-label" style="color: var(--amber);">Stay in the Room</span>
+    <h2 class="section-title">Get this week's experiment<br>before the episode drops.</h2>
+    <p class="section-body">No noise. No newsletter filler. Just the prompt, the tool, and a reason to try it — in your inbox every week.</p>
+
+    <form class="stay-form" onsubmit="subscribeEmail(event)">
+      <input type="email" placeholder="your@email.com" required id="email-input" />
+      <button type="submit">I'm in →</button>
+    </form>
+    <p class="stay-note">No spam. Unsubscribe anytime. We'd rather lose you cleanly than keep you unhappily.</p>
+
+    <p style="font-size: 0.8rem; color: rgba(255,253,248,0.35); margin-bottom: 24px; letter-spacing: 0.1em; text-transform: uppercase;">Or find us on</p>
+    <div class="platform-links">
+      <a href="#" class="platform-btn">🎙 Spotify</a>
+      <a href="#" class="platform-btn">🎧 Apple Podcasts</a>
+      <a href="#" class="platform-btn">▶ YouTube</a>
+      <a href="#" class="platform-btn">in LinkedIn</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 AI Out Loud · Tim Moon &amp; Ila Lama · Made for the people who showed up.
+</footer>
+
+<!-- ── JS ───────────────────────────────────────────────────────── -->
+<script>
+  function showResponse(key) {
+    document.querySelectorAll('.tile-response').forEach(el => el.classList.remove('visible'));
+    const el = document.getElementById('resp-' + key);
+    if (el) {
+      el.classList.add('visible');
+      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function copyPrompt() {
+    const text = document.getElementById('prompt-text').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copy-btn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy this prompt';
+        btn.classList.remove('copied');
+      }, 2500);
+    });
+  }
+
+  function submitProof(e) {
+    e.preventDefault();
+    const name = document.getElementById('proof-name').value.trim() || 'A Listener';
+    const text = document.getElementById('proof-text').value.trim();
+    const meta = document.getElementById('proof-meta').value.trim();
+    if (!text) return;
+
+    const grid = document.querySelector('.proof-grid');
+    const card = document.createElement('div');
+    card.className = 'proof-card';
+    card.style.animation = 'fadeUp .4s ease';
+    card.innerHTML = `
+      <div class="proof-card-name">${name} · Just now</div>
+      <p class="proof-card-text">"${text}"</p>
+      ${meta ? `<div class="proof-card-meta">${meta}</div>` : ''}
+    `;
+    grid.prepend(card);
+
+    document.getElementById('proof-form').style.display = 'none';
+    document.getElementById('proof-success').classList.add('show');
+  }
+
+  function subscribeEmail(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button');
+    btn.textContent = '✓ You\'re in the room.';
+    btn.style.background = '#5DD47A';
+    e.target.querySelector('input').disabled = true;
+    btn.disabled = true;
+  }
+</script>
+
+
+<script>
+  async function loadHostPhoto(canvasId, filename) {
+    const canvas = document.getElementById(canvasId);
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    try {
+      const resp = await fetch(filename);
+      const blob = await resp.blob();
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.onload = function() {
+        // Draw circular crop
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(55, 55, 55, 0, Math.PI * 2);
+        ctx.clip();
+        // Scale to fill circle, favor top of image
+        const scale = Math.max(110 / img.width, 110 / img.height);
+        const w = img.width * scale;
+        const h = img.height * scale;
+        ctx.drawImage(img, (110 - w) / 2, 0, w, h);
+        ctx.restore();
+        URL.revokeObjectURL(url);
+      };
+      img.src = url;
+    } catch(e) {
+      console.log('Photo load error:', e);
+    }
+  }
+  window.addEventListener('load', function() {
+    loadHostPhoto('ila-canvas', 'ila-lama.jpg');
+    loadHostPhoto('tim-canvas', 'tim-moon.jpg');
+  });
+</script>
+</body>
+</html>
