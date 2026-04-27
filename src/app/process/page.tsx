@@ -6,56 +6,49 @@ import {
     BrainCircuit,
     Rocket,
     BarChart3,
-    Banknote,
-    AlertTriangle,
-    Clock,
+    BookOpen,
+    Flame,
     Database,
     ArrowRightLeft,
-    TrendingUp,
     Trash2,
+    Wrench,
     Globe
 } from "lucide-react";
 
-// Detailed points for the Diagnostic Phase
 const diagnosticPoints = [
     {
-        title: "The Money Trail",
-        description: "Start where cash flows—not philosophically, but literally. How do customers find you? What's the exact path from first contact to payment? Where do invoices live, who touches them, and what breaks when someone's out sick? Most small businesses run on institutional memory disguised as process.",
-        icon: Banknote,
+        title: "The Attention Trail",
+        description: "Start where teacher time and energy actually flows—not philosophically, but literally. Where do planning hours go? What consumes the most faculty meeting time? What drains teachers between 3pm and 5pm? Most schools run on institutional memory disguised as process. The people closest to students often have no documentation for what they actually do.",
+        icon: BookOpen,
     },
     {
-        title: "The Pain Points",
-        description: "Don't ask \"what's your biggest challenge\" because you'll get platitudes. Instead: \"What task makes you want to throw your computer out the window?\" \"What do you redo most often?\" Pain is specific. Vague frustration means you haven't dug deep enough.",
-        icon: AlertTriangle,
+        title: "The Friction Points",
+        description: "Don't ask 'what's your biggest challenge' because you'll get aspirational answers. Ask: 'What task makes you want to quit?' 'What do you redo most often?' 'What would you eliminate tomorrow if you could?' Pain is specific. If a teacher describes frustration in abstract terms, you haven't dug deep enough.",
+        icon: Flame,
     },
     {
-        title: "The Time Thieves",
-        description: "Where does time actually go versus where they think it goes? Ask them to walk you through yesterday hour by hour. Patterns emerge. The difference between perceived and actual time allocation tells you everything about where systems have failed.",
-        icon: Clock,
-    },
-    {
-        title: "The Data Desert",
-        description: "What decisions do they make on gut versus data? Not because gut is bad—often it's all they have—but because it shows you where visibility is missing. \"How do you know when to reorder inventory?\" If the answer is \"I just know,\" you've found a gap.",
+        title: "The Assessment Gap",
+        description: "What decisions about student progress are made on intuition versus real data? Not because intuition is wrong—experienced teachers have excellent intuition—but because it reveals where visibility is missing. 'How do you know when a student is falling behind?' If the answer is 'I just know,' you've found a gap worth examining.",
         icon: Database,
     },
     {
         title: "The Handoff Disasters",
-        description: "Every time information passes from one person to another, something gets lost. Map those transitions. \"How does sales tell operations what was promised?\" The gaps between systems are where money and goodwill leak.",
+        description: "Every time a student's information passes from teacher to teacher, grade level to grade level, or department to department, something gets abbreviated or dropped. Map those transitions. 'How does a student's learning history travel from 6th to 7th grade?' The gaps between systems are where students fall through.",
         icon: ArrowRightLeft,
     },
     {
-        title: "The Growth Ceiling",
-        description: "\"What would break first if you doubled your customer base tomorrow?\" This reveals which systems are barely holding together now. The constraint that would snap under 2x load is probably already groaning under 1x.",
-        icon: TrendingUp,
-    },
-    {
-        title: "The Tool Graveyard",
-        description: "What software did they buy that nobody uses? Usually, it's not the tool; it's that the tool didn't fit the actual workflow, or nobody had time to learn it. It solved a problem they didn't really have.",
+        title: "The EdTech Graveyard",
+        description: "What software did your school purchase that nobody actually uses? This isn't a technology failure—it's a process failure. The tool didn't fit the real workflow, no one had bandwidth to implement it, or it solved a problem the school didn't really have. Understanding the graveyard is how you avoid filling it again.",
         icon: Trash2,
     },
     {
+        title: "The Missing Tool",
+        description: "What workarounds do your teachers run because no existing app does exactly what they need? A spreadsheet held together with prayer, a Google Form that almost works, a process nobody has documented. That workaround is a tool waiting to be built—and with Claude Code and modern AI development tools, building it is now within reach for any school.",
+        icon: Wrench,
+    },
+    {
         title: "Strategic Training",
-        description: "The best system in the world is worthless if your team treats it like a foreign object. We map who needs to know what, build training around actual daily workflows, and make sure the people closest to the work can maintain and adapt the tools without calling us. Your team should lead the AI, not depend on us to run it.",
+        description: "The best system is worthless if teachers treat it as a foreign object. We map who needs to know what, build training around actual classroom and administrative workflows, and ensure the people closest to students can lead the tools—not depend on us to run them. Faculty should own the AI, not rent it from a consultant.",
         icon: Globe,
     },
 ];
@@ -64,26 +57,26 @@ const subsequentPhases = [
     {
         id: "02",
         title: "Strategy Model",
-        description: "We design a custom implementation plan. This ensures human judgment is preserved at critical decision points while automating the repetitive grunt work.",
+        description: "We design a custom implementation plan for your school. This ensures teacher judgment and student formation remain central while automating the administrative and repetitive tasks that consume faculty without producing learning.",
         icon: BrainCircuit,
     },
     {
         id: "03",
         title: "Implementation",
-        description: "We deploy secure, business-grade agents using our Critical AI framework. No fragile prototypes—only robust systems designed for stability.",
+        description: "Using Claude Code and modern AI development tools, we build custom apps and workflows tailored to your school's actual processes. No off-the-shelf software that almost fits—tools your faculty can own, maintain, and extend.",
         icon: Rocket,
     },
     {
         id: "04",
         title: "Training & Handoff",
-        description: "Technology is useless if your team can't use it. We provide comprehensive training to ensure your staff leads the AI, not the other way around.",
+        description: "Technology is useless if teachers see it as a threat or a burden. We train around real classroom and administrative workflows so your faculty leads the AI—not the other way around.",
         icon: BarChart3,
     },
 ];
 
 export default function ProcessPage() {
     return (
-        <main className="flex min-h-screen flex-col bg-black text-white pt-32 sm:pt-40">
+        <main className="flex min-h-screen flex-col bg-slate-950 text-white pt-32 sm:pt-40">
             <Container className="py-24">
                 {/* Header */}
                 <div className="max-w-3xl mb-32">
@@ -100,7 +93,7 @@ export default function ProcessPage() {
                         transition={{ delay: 0.1 }}
                         className="text-xl text-zinc-400 leading-relaxed"
                     >
-                        We strictly follow a &ldquo;Strategy First, Code Second&rdquo; approach. Most AI projects fail because they skip the hard questions. We don&apos;t.
+                        We follow a &ldquo;Diagnosis First, Tools Second&rdquo; approach. Most AI initiatives in schools fail because they skip the hard questions. We don&apos;t.
                     </motion.p>
                 </div>
 
@@ -124,10 +117,7 @@ export default function ProcessPage() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className={`rounded-2xl border border-zinc-900 bg-zinc-900/20 p-8 hover:bg-zinc-900/40 transition-colors ${index === 0 || index === 3 || index === 6 ? "md:col-span-2 lg:col-span-1" : ""
-                                    }`}
-                            // Use col-span logic to break up the grid visually if desired, 
-                            // or just simple grid. Let's keep it simple grid for readability first.
+                                className="rounded-2xl border border-zinc-900 bg-zinc-900/20 p-8 hover:bg-zinc-900/40 transition-colors"
                             >
                                 <div className="flex items-center gap-4 mb-4">
                                     <div className="p-3 rounded-lg bg-blue-500/10 text-blue-400">
@@ -143,10 +133,9 @@ export default function ProcessPage() {
                     </div>
 
                     <div className="mt-8 p-6 rounded-xl bg-blue-900/10 border border-blue-500/20 text-blue-200 text-sm">
-                        <strong>The Goal:</strong> The diagnostic phase isn&apos;t about cataloging everything you do. It&apos;s about finding strategic leverage points.
+                        <strong>The Goal:</strong> The diagnostic phase isn&apos;t about cataloging everything a school does. It&apos;s about finding strategic leverage points where better systems create disproportionate returns for teachers and students.
                     </div>
                 </section>
-
 
                 {/* SUBSEQUENT PHASES (Summary) */}
                 <div className="grid grid-cols-1 gap-12">

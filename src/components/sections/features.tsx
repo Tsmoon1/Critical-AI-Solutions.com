@@ -2,70 +2,63 @@
 
 import { motion } from "framer-motion";
 import {
-    Banknote,
+    BookOpen,
     Flame,
-    Clock,
     Database,
     ArrowLeftRight,
-    TrendingUp,
     Archive,
+    Wrench,
 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 
 const features = [
     {
-        title: "The Money Trail",
-        description: "We start where your cash actually flows. How do customers find you? What's the exact path from first contact to payment?",
-        icon: Banknote,
+        title: "The Attention Trail",
+        description: "We start where teacher time and energy actually flows—not philosophically, but literally. Where do planning hours go? What consumes the most faculty meeting time? Most schools run on institutional memory disguised as process.",
+        icon: BookOpen,
         className: "md:col-span-1",
     },
     {
-        title: "The Pain Points",
-        description: "What tasks do you dread? What do you redo most often? That's where automation either saves you or makes things worse.",
+        title: "The Friction Points",
+        description: "Don't ask 'what's your biggest challenge' because you'll get aspirational answers. Ask: 'What task makes you want to quit?' 'What do you redo most often?' Pain is specific. If a teacher describes frustration in abstract terms, you haven't dug deep enough.",
         icon: Flame,
         className: "md:col-span-1",
     },
     {
-        title: "The Time Thieves",
-        description: "We analyze your day for you, hour by hour. Where did your time really go? The difference between perceived and actual time allocation can tell you everything.",
-        icon: Clock,
-        className: "md:col-span-1",
-    },
-    {
-        title: "The Data Desert",
-        description: "We help you determine what decisions you make on gut feelings versus real data. For example, how do you know when to reorder inventory? Measurable data is useful data.",
+        title: "The Assessment Gap",
+        description: "What decisions about student progress are made on intuition versus real data? Not because intuition is wrong—experienced teachers have excellent intuition—but because it reveals where visibility is missing. 'How do you know when a student is falling behind?' If the answer is 'I just know,' you've found a gap.",
         icon: Database,
-        className: "md:col-span-2",
+        className: "md:col-span-1",
     },
     {
         title: "The Handoff Disasters",
-        description: "How often does your information pass from one person to another? This is where something often gets lost? We help you map those transitions.",
+        description: "Every time a student's information passes from teacher to teacher, grade level to grade level, or department to department, something gets abbreviated or dropped. Map those transitions. The gaps between systems are where students fall through.",
         icon: ArrowLeftRight,
-        className: "md:col-span-1",
-    },
-    {
-        title: "The Growth Ceiling",
-        description: "What would break first if you doubled your customer base tomorrow? The constraint that would snap under 2x load is probably already groaning under 1x.",
-        icon: TrendingUp,
-        className: "md:col-span-1",
-    },
-    {
-        title: "The Tool Graveyard",
-        description: "What software did you buy that nobody uses? That's not a tool problem—that's a process problem. We make sure it doesn't happen again.",
-        icon: Archive,
         className: "md:col-span-2",
+    },
+    {
+        title: "The EdTech Graveyard",
+        description: "What software did your school purchase that nobody actually uses? That's not a technology failure—it's a process failure. The tool didn't fit the real workflow, or it solved a problem the school didn't really have. Understanding the graveyard is how you avoid filling it again.",
+        icon: Archive,
+        className: "md:col-span-1",
+    },
+    {
+        title: "The Missing Tool",
+        description: "What workarounds do your teachers run because no existing app does exactly what they need? A spreadsheet held together with prayer, a Google Form that almost works, a process nobody has documented. That workaround is a tool waiting to be built—and with Claude Code, building it is now within reach.",
+        icon: Wrench,
+        className: "md:col-span-3",
     },
 ];
 
 export function Features() {
     return (
-        <section className="py-24 bg-zinc-950 sm:py-32">
+        <section className="py-24 bg-slate-900 sm:py-32">
             <Container>
                 <div className="mx-auto max-w-2xl text-center mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                        The Questions Nobody Else Asks{" "}
-                        <span className="text-blue-500">Before Selling You Tools</span>
+                        The Questions Nobody Asks{" "}
+                        <span className="text-blue-500">Before Implementing AI</span>
                     </h2>
                 </div>
 

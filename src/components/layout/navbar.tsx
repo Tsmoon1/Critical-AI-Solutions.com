@@ -7,16 +7,16 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/50 backdrop-blur-md">
+        <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-slate-950/80 backdrop-blur-md overflow-hidden">
             <Container>
                 <div className="flex h-32 items-center justify-between">
                     <Link href="/" className="flex items-center gap-3">
-                        <div className="relative h-48 w-48 overflow-hidden">
+                        <div className="relative h-28 w-40 overflow-hidden">
                             <Image
                                 src="/logo.jpg"
                                 alt="Critical AI Solutions Logo"
                                 fill
-                                className="object-contain invert"
+                                className="object-contain invert mix-blend-screen"
                             />
                         </div>
                     </Link>

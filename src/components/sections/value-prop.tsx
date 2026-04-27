@@ -1,43 +1,43 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ShieldCheck, Users, FileSearch, ListChecks } from "lucide-react";
+import { GraduationCap, FileSearch, Code, Users } from "lucide-react";
 import { Container } from "@/components/ui/container";
 
 const items = [
     {
-        title: "Failure Prevention",
-        description: "Pattern recognition across 30+ implementations so you don't repeat expensive mistakes.",
-        icon: ShieldCheck,
+        title: "AI Literacy Training",
+        description: "Hands-on workshops that teach teachers and administrators to use AI tools with integrity—prompting, evaluation, and ethical use grounded in your school's mission.",
+        icon: GraduationCap,
     },
     {
-        title: "Human-in-the-Loop Design",
-        description: "Systems where machines handle repetition and humans handle relationships.",
-        icon: Users,
-    },
-    {
-        title: "Process Clarity First",
-        description: "We document and fix broken workflows before automating them.",
+        title: "Diagnostic-First Methodology",
+        description: "We map your school's processes, pain points, and tool graveyard before recommending or building anything. Most EdTech fails because this step gets skipped.",
         icon: FileSearch,
     },
     {
-        title: "Implementation Discipline",
-        description: "The 6-step methodology that addresses why 95% fail.",
-        icon: ListChecks,
+        title: "Custom Tool Building",
+        description: "Using Claude Code and modern AI development tools, we help schools build apps that fit their actual workflows—instead of buying something that almost fits and costs forever.",
+        icon: Code,
+    },
+    {
+        title: "Faculty Ownership",
+        description: "Teachers own the tools we build together. We train your staff to maintain, adapt, and extend what we create—no consultant dependency, no recurring license.",
+        icon: Users,
     },
 ];
 
 export function ValueProp() {
     return (
-        <section className="py-24 bg-black sm:py-32">
+        <section className="py-24 bg-slate-950 sm:py-32">
             <Container>
                 <div className="mx-auto max-w-2xl text-center mb-16">
                     <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
                         What You&apos;re <span className="text-blue-500">Actually Buying</span>
                     </h2>
                     <div className="mt-4 space-y-1 text-lg text-zinc-400">
-                        <p>Not tool training&mdash;vendors do that for free.</p>
-                        <p>Not generic advice&mdash;you can get that from YouTube.</p>
+                        <p>Not another SaaS subscription&mdash;vendors sell those forever.</p>
+                        <p>Not generic AI training&mdash;YouTube does that for free.</p>
                         <p className="text-zinc-300 font-medium">You&apos;re buying:</p>
                     </div>
                 </div>

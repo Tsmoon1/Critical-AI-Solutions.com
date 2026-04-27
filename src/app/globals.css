@@ -90,8 +90,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
-    /* zinc-950 */
+    --background: #020617;
+    /* slate-950 */
     --foreground: #fafafa;
     /* zinc-50 */
     --card: #09090b;
