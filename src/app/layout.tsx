@@ -15,7 +15,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Critical AI Solutions",
-  description: "Guidance for Small Business Automation",
+  description: "AI literacy training, diagnosis, and custom tool building for classical schools — helping educators navigate AI without losing what makes them different.",
+  openGraph: {
+    title: "Critical AI Solutions",
+    description: "AI literacy training, diagnosis, and custom tool building for classical schools — helping educators navigate AI without losing what makes them different.",
+    url: "https://critical-ai-solutions.com",
+    siteName: "Critical AI Solutions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Critical AI Solutions",
+    description: "AI literacy training, diagnosis, and custom tool building for classical schools — helping educators navigate AI without losing what makes them different.",
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-950`}
       >
         <Navbar />
         {children}
