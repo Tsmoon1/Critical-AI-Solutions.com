@@ -7,7 +7,7 @@ import { ArrowRight, Clock, Users, CheckCircle2, BookOpen, CalendarDays } from "
 import Link from "next/link";
 
 const outcomes = [
-    "Understand what AI actually is — and isn't — so you can have honest conversations with faculty and parents",
+    "Understand what AI actually is (and isn't) so you can have honest conversations with faculty and parents",
     "Identify the three ways schools misuse AI and how to avoid each one",
     "Develop a simple, defensible policy framework you can implement immediately",
     "Recognize where AI can genuinely reduce teacher workload without undermining craft",
@@ -41,7 +41,7 @@ export default function WorkshopPage() {
                                 <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
                                 <p className="text-sm text-zinc-300 leading-relaxed">
                                     <span className="font-semibold text-white">Now scheduling for end-of-year and back-to-school in-service days.</span>{" "}
-                                    If your school is planning professional development for May–June or August, this workshop fits a single in-service slot — no pre-reading, no software, no follow-up homework required.
+                                    If your school is planning professional development for May–June or August, this workshop fits a single in-service slot: no pre-reading, no software, no follow-up homework required.
                                 </p>
                             </div>
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6 leading-tight">
@@ -49,7 +49,7 @@ export default function WorkshopPage() {
                                 <span className="text-blue-400">This Workshop Starts There.</span>
                             </h1>
                             <p className="text-lg text-zinc-400 leading-relaxed max-w-prose mb-8">
-                                Most AI training for schools begins with enthusiasm and ends with eye-rolls. This one begins with the hard questions your faculty is already asking — and earns its way to practical answers.
+                                Most AI training for schools begins with enthusiasm and ends with eye-rolls. This one begins with the hard questions your faculty is already asking, and earns its way to practical answers.
                             </p>
                             <div className="flex flex-wrap gap-6 text-sm text-zinc-400 mb-10">
                                 <div className="flex items-center gap-2">
@@ -161,12 +161,12 @@ export default function WorkshopPage() {
                                 <div className="rounded-xl border border-slate-700/50 bg-slate-900/50 p-6">
                                     <p className="text-sm font-semibold text-lime-400 mb-2 uppercase tracking-wider">Back to School · August</p>
                                     <p className="text-zinc-300 leading-relaxed text-sm max-w-prose">
-                                        Start the year with a unified stance. Parents, faculty, and administration enter the year speaking the same language about AI — before the first student submits an AI-generated paper.
+                                        Start the year with a unified stance. Parents, faculty, and administration enter the year speaking the same language about AI, before the first student submits an AI-generated paper.
                                     </p>
                                 </div>
                             </div>
                             <p className="mt-6 text-zinc-500 text-sm max-w-prose">
-                                Both windows are booking now. In-service slots fill early — especially August dates.
+                                Both windows are booking now. In-service slots fill early, especially August dates.
                             </p>
                         </motion.div>
                     </div>
@@ -185,10 +185,10 @@ export default function WorkshopPage() {
                         >
                             <h2 className="text-sm font-mono text-blue-500 mb-4 uppercase tracking-wider">Why Free</h2>
                             <p className="text-zinc-300 leading-relaxed max-w-prose mb-4">
-                                Because the first conversation should cost you nothing. My goal is to give your school a shared vocabulary and a defensible framework before any decision about deeper work. Schools that have done the thinking are better clients — and better off regardless of whether we work together further.
+                                Because the first conversation should cost you nothing. My goal is to give your school a shared vocabulary and a defensible framework before any decision about deeper work. Schools that have done the thinking are better clients, and better off regardless of whether we work together further.
                             </p>
                             <p className="text-zinc-400 leading-relaxed max-w-prose">
-                                The workshop is free. The follow-on work — deeper diagnostics, faculty training series, custom tool building — is not. But that decision should come after you&apos;ve seen what good AI guidance actually looks like.
+                                The workshop is free. The follow-on work (deeper diagnostics, faculty training series, custom tool building) is not. But that decision should come after you&apos;ve seen what good AI guidance actually looks like.
                             </p>
                         </motion.div>
                     </div>
@@ -208,7 +208,7 @@ export default function WorkshopPage() {
                             Ready to have the real conversation?
                         </h2>
                         <p className="text-zinc-400 mb-8 max-w-prose mx-auto leading-relaxed">
-                            Use the contact form to request a workshop date. Tell us a little about your school — size, culture, where faculty stands on AI right now — and we&apos;ll follow up within one business day.
+                            Use the contact form to request a workshop date. Tell us a little about your school: size, culture, where faculty stands on AI right now. We&apos;ll follow up within one business day.
                         </p>
                         <Link href="/contact">
                             <Button variant="glow" size="lg" className="group">

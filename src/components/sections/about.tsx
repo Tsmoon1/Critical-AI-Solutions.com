@@ -17,10 +17,10 @@ export function About() {
                     <h3 className="text-2xl font-bold text-white mb-1">Tim Moon</h3>
                     <p className="text-sm text-zinc-500 mb-6">Former Dean of Rhetoric · AI Liaison, Wayland Baptist University · Founder, VoiceArc</p>
                     <p className="text-zinc-400 leading-relaxed mb-4 max-w-prose">
-                        I spent twenty-five years inside classical education&mdash;as a teacher, Dean of Rhetoric, and school leader&mdash;watching institutions spend heavily on technology that promised transformation and delivered distraction. The EdTech failure rate mirrors every other AI failure rate: organizations reach for tools before they understand their processes.
+                        I spent twenty-five years inside classical education as a teacher, Dean of Rhetoric, and school leader, watching institutions spend heavily on technology that promised transformation and delivered distraction. The EdTech failure rate mirrors every other AI failure rate: organizations reach for tools before they understand their processes.
                     </p>
                     <p className="text-zinc-400 leading-relaxed mb-10 max-w-prose">
-                        I now serve as AI Liaison and Adjunct Professor at Wayland Baptist University, teach a Professional Readiness course integrating AI literacy, and founded <em className="text-zinc-300 not-italic font-medium">VoiceArc</em>&mdash;an AI-assisted rhetoric analysis tool for writing teachers. I write about the intersection of classical education and artificial intelligence at <em className="text-zinc-300 not-italic font-medium">Silicon and Soul</em>. I founded Critical AI Solutions to help schools navigate AI the way a classical educator should: asking better questions first.
+                        I now serve as AI Liaison and Adjunct Professor at Wayland Baptist University, teach a Professional Readiness course integrating AI literacy, and founded <em className="text-zinc-300 not-italic font-medium">VoiceArc</em>, an AI-assisted rhetoric analysis tool for writing teachers. I write about the intersection of classical education and artificial intelligence at <em className="text-zinc-300 not-italic font-medium">Silicon and Soul</em>. I founded Critical AI Solutions to help schools navigate AI the way a classical educator should: asking better questions first.
                     </p>
 
                     <motion.blockquote

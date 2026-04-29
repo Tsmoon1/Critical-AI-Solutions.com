@@ -15,10 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Critical AI Solutions",
-  description: "AI literacy training, diagnosis, and custom tool building for classical schools — helping educators navigate AI without losing what makes them different.",
+  description: "AI literacy training, diagnosis, and custom tool building for classical schools: helping educators navigate AI without losing what makes them different.",
   openGraph: {
     title: "Critical AI Solutions",
-    description: "AI literacy training, diagnosis, and custom tool building for classical schools — helping educators navigate AI without losing what makes them different.",
+    description: "AI literacy training, diagnosis, and custom tool building for classical schools: helping educators navigate AI without losing what makes them different.",
     url: "https://critical-ai-solutions.com",
     siteName: "Critical AI Solutions",
     type: "website",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Critical AI Solutions",
-    description: "AI literacy training, diagnosis, and custom tool building for classical schools — helping educators navigate AI without losing what makes them different.",
+    description: "AI literacy training, diagnosis, and custom tool building for classical schools: helping educators navigate AI without losing what makes them different.",
   },
 };
 

@@ -18,7 +18,7 @@ import {
 const diagnosticPoints = [
     {
         title: "The Attention Trail",
-        description: "Start where teacher time and energy actually flows—not philosophically, but literally. Where do planning hours go? What consumes the most faculty meeting time? What drains teachers between 3pm and 5pm? Most schools run on institutional memory disguised as process. The people closest to students often have no documentation for what they actually do.",
+        description: "Start where teacher time and energy actually flows: not philosophically, but literally. Where do planning hours go? What consumes the most faculty meeting time? What drains teachers between 3pm and 5pm? Most schools run on institutional memory disguised as process. The people closest to students often have no documentation for what they actually do.",
         icon: BookOpen,
     },
     {
@@ -28,7 +28,7 @@ const diagnosticPoints = [
     },
     {
         title: "The Assessment Gap",
-        description: "What decisions about student progress are made on intuition versus real data? Not because intuition is wrong—experienced teachers have excellent intuition—but because it reveals where visibility is missing. 'How do you know when a student is falling behind?' If the answer is 'I just know,' you've found a gap worth examining.",
+        description: "What decisions about student progress are made on intuition versus real data? Not because intuition is wrong (experienced teachers have excellent intuition), but because it reveals where visibility is missing. 'How do you know when a student is falling behind?' If the answer is 'I just know,' you've found a gap worth examining.",
         icon: Database,
     },
     {
@@ -38,17 +38,17 @@ const diagnosticPoints = [
     },
     {
         title: "The EdTech Graveyard",
-        description: "What software did your school purchase that nobody actually uses? This isn't a technology failure—it's a process failure. The tool didn't fit the real workflow, no one had bandwidth to implement it, or it solved a problem the school didn't really have. Understanding the graveyard is how you avoid filling it again.",
+        description: "What software did your school purchase that nobody actually uses? This isn't a technology failure; it's a process failure. The tool didn't fit the real workflow, no one had bandwidth to implement it, or it solved a problem the school didn't really have. Understanding the graveyard is how you avoid filling it again.",
         icon: Trash2,
     },
     {
         title: "The Missing Tool",
-        description: "What workarounds do your teachers run because no existing app does exactly what they need? A spreadsheet held together with prayer, a Google Form that almost works, a process nobody has documented. That workaround is a tool waiting to be built—and with Claude Code and modern AI development tools, building it is now within reach for any school.",
+        description: "What workarounds do your teachers run because no existing app does exactly what they need? A spreadsheet held together with prayer, a Google Form that almost works, a process nobody has documented. That workaround is a tool waiting to be built, and with Claude Code and modern AI development tools, building it is now within reach for any school.",
         icon: Wrench,
     },
     {
         title: "Strategic Training",
-        description: "The best system is worthless if teachers treat it as a foreign object. We map who needs to know what, build training around actual classroom and administrative workflows, and ensure the people closest to students can lead the tools—not depend on us to run them. Faculty should own the AI, not rent it from a consultant.",
+        description: "The best system is worthless if teachers treat it as a foreign object. We map who needs to know what, build training around actual classroom and administrative workflows, and ensure the people closest to students can lead the tools. Faculty should own the AI, not rent it from a consultant.",
         icon: Globe,
     },
 ];
@@ -63,13 +63,13 @@ const subsequentPhases = [
     {
         id: "03",
         title: "Implementation",
-        description: "Using Claude Code and modern AI development tools, we build custom apps and workflows tailored to your school's actual processes. No off-the-shelf software that almost fits—tools your faculty can own, maintain, and extend.",
+        description: "Using Claude Code and modern AI development tools, we build custom apps and workflows tailored to your school's actual processes. No off-the-shelf software that almost fits. Tools your faculty can own, maintain, and extend.",
         icon: Rocket,
     },
     {
         id: "04",
         title: "Training & Handoff",
-        description: "Technology is useless if teachers see it as a threat or a burden. We train around real classroom and administrative workflows so your faculty leads the AI—not the other way around.",
+        description: "Technology is useless if teachers see it as a threat or a burden. We train around real classroom and administrative workflows so your faculty leads the AI, not the other way around.",
         icon: BarChart3,
     },
 ];

@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/container";
 const items = [
     {
         title: "AI Literacy Training",
-        description: "Hands-on workshops that teach teachers and administrators to use AI tools with integrity—prompting, evaluation, and ethical use grounded in your school's mission.",
+        description: "Hands-on workshops that teach teachers and administrators to use AI tools with integrity: prompting, evaluation, and ethical use grounded in your school's mission.",
         icon: GraduationCap,
     },
     {
@@ -17,12 +17,12 @@ const items = [
     },
     {
         title: "Custom Tool Building",
-        description: "Using Claude Code and modern AI development tools, we help schools build apps that fit their actual workflows—instead of buying something that almost fits and costs forever.",
+        description: "Using Claude Code and modern AI development tools, we help schools build apps that fit their actual workflows instead of buying something that almost fits and costs forever.",
         icon: Code,
     },
     {
         title: "Faculty Ownership",
-        description: "Teachers own the tools we build together. We train your staff to maintain, adapt, and extend what we create—no consultant dependency, no recurring license.",
+        description: "Teachers own the tools we build together. We train your staff to maintain, adapt, and extend what we create. No consultant dependency, no recurring license.",
         icon: Users,
     },
 ];
@@ -36,8 +36,8 @@ export function ValueProp() {
                         What You&apos;re <span className="text-blue-500">Actually Buying</span>
                     </h2>
                     <div className="mt-4 space-y-1 text-lg text-zinc-400">
-                        <p>Not another SaaS subscription&mdash;vendors sell those forever.</p>
-                        <p>Not generic AI training&mdash;YouTube does that for free.</p>
+                        <p>Not another SaaS subscription. Vendors sell those forever.</p>
+                        <p>Not generic AI training. YouTube does that for free.</p>
                         <p className="text-zinc-300 font-medium">You&apos;re buying:</p>
                     </div>
                 </div>

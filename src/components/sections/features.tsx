@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 const features = [
     {
         title: "The Attention Trail",
-        description: "We start where teacher time and energy actually flows—not philosophically, but literally. Where do planning hours go? What consumes the most faculty meeting time? Most schools run on institutional memory disguised as process.",
+        description: "We start where teacher time and energy actually flows: not philosophically, but literally. Where do planning hours go? What consumes the most faculty meeting time? Most schools run on institutional memory disguised as process.",
         icon: BookOpen,
         className: "md:col-span-1",
     },
@@ -27,7 +27,7 @@ const features = [
     },
     {
         title: "The Assessment Gap",
-        description: "What decisions about student progress are made on intuition versus real data? Not because intuition is wrong—experienced teachers have excellent intuition—but because it reveals where visibility is missing. 'How do you know when a student is falling behind?' If the answer is 'I just know,' you've found a gap.",
+        description: "What decisions about student progress are made on intuition versus real data? Not because intuition is wrong (experienced teachers have excellent intuition), but because it reveals where visibility is missing. 'How do you know when a student is falling behind?' If the answer is 'I just know,' you've found a gap.",
         icon: Database,
         className: "md:col-span-1",
     },
@@ -39,13 +39,13 @@ const features = [
     },
     {
         title: "The EdTech Graveyard",
-        description: "What software did your school purchase that nobody actually uses? That's not a technology failure—it's a process failure. The tool didn't fit the real workflow, or it solved a problem the school didn't really have. Understanding the graveyard is how you avoid filling it again.",
+        description: "What software did your school purchase that nobody actually uses? That's not a technology failure; it's a process failure. The tool didn't fit the real workflow, or it solved a problem the school didn't really have. Understanding the graveyard is how you avoid filling it again.",
         icon: Archive,
         className: "md:col-span-1",
     },
     {
         title: "The Missing Tool",
-        description: "What workarounds do your teachers run because no existing app does exactly what they need? A spreadsheet held together with prayer, a Google Form that almost works, a process nobody has documented. That workaround is a tool waiting to be built—and with Claude Code, building it is now within reach.",
+        description: "What workarounds do your teachers run because no existing app does exactly what they need? A spreadsheet held together with prayer, a Google Form that almost works, a process nobody has documented. That workaround is a tool waiting to be built, and with Claude Code, building it is now within reach.",
         icon: Wrench,
         className: "md:col-span-3",
     },

@@ -40,7 +40,7 @@ export function Hero() {
                             <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
                             <p className="text-sm text-zinc-300 leading-relaxed">
                                 <span className="font-semibold text-white">Now scheduling for end-of-year and back-to-school in-service days.</span>{" "}
-                                If your school is planning professional development for May–June or August, this workshop fits a single in-service slot — no pre-reading, no software, no follow-up homework required.
+                                If your school is planning professional development for May–June or August, this workshop fits a single in-service slot: no pre-reading, no software, no follow-up homework required.
                             </p>
                         </motion.div>
 
@@ -64,7 +64,7 @@ export function Hero() {
                             transition={{ duration: 0.5, delay: 0.2 }}
                             className="text-lg leading-8 text-zinc-400 max-w-xl mb-10"
                         >
-                            Most schools are stuck between two bad options: avoid AI out of fear, or adopt it without a plan and watch it create more problems than it solves. Twenty-five years inside classical education showed me a third path&mdash;diagnose first, train with integrity, and build tools that actually fit your school instead of buying something that almost does.
+                            Most schools are stuck between two bad options: avoid AI out of fear, or adopt it without a plan and watch it create more problems than it solves. Twenty-five years inside classical education showed me a third path: diagnose first, train with integrity, and build tools that actually fit your school instead of buying something that almost does.
                         </motion.p>
 
                         {/* Buttons */}
