@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles, CalendarDays } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import Image from "next/image";
@@ -27,7 +27,21 @@ export function Hero() {
                             className="mb-8 inline-flex items-center rounded-full border border-blue-500/30 bg-blue-900/10 px-3 py-1 text-sm font-medium text-blue-400 backdrop-blur-sm"
                         >
                             <Sparkles className="mr-2 h-4 w-4" />
-                            <span>Classical Education × AI Literacy</span>
+                            <span>Classical Education × AI Fluency</span>
+                        </motion.div>
+
+                        {/* In-service banner */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.05 }}
+                            className="mb-6 flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-900/10 px-5 py-4 max-w-xl"
+                        >
+                            <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
+                            <p className="text-sm text-zinc-300 leading-relaxed">
+                                <span className="font-semibold text-white">Now scheduling for end-of-year and back-to-school in-service days.</span>{" "}
+                                If your school is planning professional development for May–June or August, this workshop fits a single in-service slot — no pre-reading, no software, no follow-up homework required.
+                            </p>
                         </motion.div>
 
                         {/* Heading */}
