@@ -12,7 +12,7 @@ export default function ContactPage() {
     const [error, setError] = useState("");
 
     return (
-        <main className="flex min-h-screen flex-col bg-black text-white pt-32 sm:pt-40">
+        <main className="flex min-h-screen flex-col bg-slate-950 text-white pt-32 sm:pt-40">
             <Container className="py-24">
                 <div className="mx-auto max-w-2xl">
                     <motion.div
@@ -25,10 +25,10 @@ export default function ContactPage() {
                             <span>Free Discovery Call</span>
                         </div>
                         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-4">
-                            Let&apos;s talk about your business
+                            Let&apos;s talk about your school
                         </h1>
-                        <p className="text-lg text-zinc-400 leading-relaxed">
-                            No pitch, no pressure. We&apos;ll spend 30 minutes understanding how your business actually works and whether automation makes sense for you right now.
+                        <p className="text-lg text-zinc-400 leading-relaxed max-w-prose">
+                            No pitch, no pressure. We&apos;ll spend 30 minutes understanding how your school actually works and whether AI training or custom tools make sense for you right now.
                         </p>
                     </motion.div>
 
@@ -58,7 +58,7 @@ export default function ContactPage() {
                                     body: JSON.stringify({
                                         name: formData.get("name"),
                                         email: formData.get("email"),
-                                        business: formData.get("business"),
+                                        school: formData.get("school"),
                                         pain: formData.get("pain"),
                                     }),
                                 });
@@ -95,33 +95,33 @@ export default function ContactPage() {
                                         name="email"
                                         required
                                         className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                                        placeholder="you@company.com"
+                                        placeholder="you@school.edu"
                                     />
                                 </div>
                             </div>
                             <div>
-                                <label htmlFor="business" className="block text-sm font-medium text-zinc-300 mb-2">
-                                    What does your business do?
+                                <label htmlFor="school" className="block text-sm font-medium text-zinc-300 mb-2">
+                                    Tell us about your school
                                 </label>
                                 <input
                                     type="text"
-                                    id="business"
-                                    name="business"
+                                    id="school"
+                                    name="school"
                                     required
                                     className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
-                                    placeholder="e.g. We run a 12-person landscaping company"
+                                    placeholder="e.g. Classical K-12, 200 students, Austin TX"
                                 />
                             </div>
                             <div>
                                 <label htmlFor="pain" className="block text-sm font-medium text-zinc-300 mb-2">
-                                    What&apos;s the biggest thing slowing you down right now?
+                                    What&apos;s your biggest challenge with AI right now?
                                 </label>
                                 <textarea
                                     id="pain"
                                     name="pain"
                                     rows={4}
                                     className="w-full rounded-lg border border-zinc-800 bg-zinc-900/50 px-4 py-3 text-white placeholder-zinc-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500 resize-none"
-                                    placeholder="Don't worry about using the right words. Just tell us what's frustrating."
+                                    placeholder="Don't worry about using the right words. Just tell us what's on your mind."
                                 />
                             </div>
                             {error && (

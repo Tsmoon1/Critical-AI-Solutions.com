@@ -82,7 +82,7 @@ export function Features() {
                             <h3 className="mb-2 text-lg font-semibold text-white">
                                 {feature.title}
                             </h3>
-                            <p className="text-zinc-400 leading-relaxed">
+                            <p className="text-zinc-400 leading-relaxed max-w-prose">
                                 {feature.description}
                             </p>
                         </motion.div>
