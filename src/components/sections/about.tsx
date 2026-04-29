@@ -15,7 +15,7 @@ export function About() {
                 >
                     <h2 className="text-sm font-mono text-blue-500 mb-2">WHO&apos;S BEHIND THIS</h2>
                     <h3 className="text-2xl font-bold text-white mb-1">Tim Moon</h3>
-                    <p className="text-sm text-zinc-500 mb-6">Dean of Rhetoric · AI Liaison, Wayland Baptist University · Founder, VoiceArc</p>
+                    <p className="text-sm text-zinc-500 mb-6">Former Dean of Rhetoric · AI Liaison, Wayland Baptist University · Founder, VoiceArc</p>
                     <p className="text-zinc-400 leading-relaxed mb-4 max-w-prose">
                         I spent twenty-five years inside classical education&mdash;as a teacher, Dean of Rhetoric, and school leader&mdash;watching institutions spend heavily on technology that promised transformation and delivered distraction. The EdTech failure rate mirrors every other AI failure rate: organizations reach for tools before they understand their processes.
                     </p>
