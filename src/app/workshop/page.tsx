@@ -3,7 +3,7 @@
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ArrowRight, Clock, Users, CheckCircle2, BookOpen } from "lucide-react";
+import { ArrowRight, Clock, Users, CheckCircle2, BookOpen, CalendarDays } from "lucide-react";
 import Link from "next/link";
 
 const outcomes = [
@@ -36,6 +36,13 @@ export default function WorkshopPage() {
                             <div className="mb-4 inline-flex items-center rounded-full border border-lime-500/30 bg-lime-900/10 px-3 py-1 text-sm font-medium text-lime-400">
                                 <BookOpen className="mr-2 h-4 w-4" />
                                 <span>Free Workshop · AI Fluency in Education</span>
+                            </div>
+                            <div className="mb-6 flex items-start gap-3 rounded-xl border border-blue-500/20 bg-blue-900/10 px-5 py-4 max-w-prose">
+                                <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-blue-400" />
+                                <p className="text-sm text-zinc-300 leading-relaxed">
+                                    <span className="font-semibold text-white">Now scheduling for end-of-year and back-to-school in-service days.</span>{" "}
+                                    If your school is planning professional development for May–June or August, this workshop fits a single in-service slot — no pre-reading, no software, no follow-up homework required.
+                                </p>
                             </div>
                             <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6 leading-tight">
                                 Your Teachers Are Skeptical of AI.{" "}
@@ -126,6 +133,41 @@ export default function WorkshopPage() {
                                     </motion.li>
                                 ))}
                             </ul>
+                        </motion.div>
+                    </div>
+                </Container>
+            </section>
+
+            {/* When Schools Book This */}
+            <section className="py-16 sm:py-24 bg-slate-950">
+                <Container>
+                    <div className="mx-auto max-w-3xl">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                        >
+                            <h2 className="text-sm font-mono text-blue-500 mb-2 uppercase tracking-wider">When Schools Book This</h2>
+                            <h3 className="text-2xl font-bold text-white mb-8">
+                                In-service is the right moment
+                            </h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div className="rounded-xl border border-slate-700/50 bg-slate-900/50 p-6">
+                                    <p className="text-sm font-semibold text-blue-400 mb-2 uppercase tracking-wider">End of Year · May–June</p>
+                                    <p className="text-zinc-300 leading-relaxed text-sm max-w-prose">
+                                        Close the year with faculty aligned on AI policy before summer. Teachers leave with a shared framework instead of spending summer confused about what&apos;s allowed in the fall.
+                                    </p>
+                                </div>
+                                <div className="rounded-xl border border-slate-700/50 bg-slate-900/50 p-6">
+                                    <p className="text-sm font-semibold text-lime-400 mb-2 uppercase tracking-wider">Back to School · August</p>
+                                    <p className="text-zinc-300 leading-relaxed text-sm max-w-prose">
+                                        Start the year with a unified stance. Parents, faculty, and administration enter the year speaking the same language about AI — before the first student submits an AI-generated paper.
+                                    </p>
+                                </div>
+                            </div>
+                            <p className="mt-6 text-zinc-500 text-sm max-w-prose">
+                                Both windows are booking now. In-service slots fill early — especially August dates.
+                            </p>
                         </motion.div>
                     </div>
                 </Container>
