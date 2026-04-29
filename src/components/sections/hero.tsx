@@ -53,15 +53,22 @@ export function Hero() {
                             Most schools are stuck between two bad options: avoid AI out of fear, or adopt it without a plan and watch it create more problems than it solves. Twenty-five years inside classical education showed me a third path&mdash;diagnose first, train with integrity, and build tools that actually fit your school instead of buying something that almost does.
                         </motion.p>
 
-                        {/* Button */}
+                        {/* Buttons */}
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: 0.3 }}
+                            className="flex flex-wrap gap-4"
                         >
                             <Link href="/contact">
                                 <Button variant="glow" size="lg" className="group">
                                     Schedule a Discovery
+                                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                                </Button>
+                            </Link>
+                            <Link href="/workshop">
+                                <Button variant="outline" size="lg" className="group border-slate-600 text-zinc-300 bg-transparent hover:border-blue-500/60 hover:text-white hover:bg-blue-900/20">
+                                    Free Workshop
                                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                                 </Button>
                             </Link>
