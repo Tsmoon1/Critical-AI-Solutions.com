@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
 import { Container } from "@/components/ui/container";
 
 export function About() {
@@ -39,6 +40,32 @@ export function About() {
                             Executive Director and Campus Dean, San Antonio Campus · Professor of Christian Ministry and Counseling, School of Christian Studies · Wayland Baptist University
                         </footer>
                     </motion.blockquote>
+
+                    {/* Partner */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2 }}
+                        className="mt-16 pt-12 border-t border-slate-800"
+                    >
+                        <h2 className="text-sm font-mono text-blue-500 mb-2">PARTNER</h2>
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-6">
+                            <h3 className="text-2xl font-bold text-white">Christoph Kwiatkowski</h3>
+                            <a
+                                href="https://linkedin.com/in/chriskwiat"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-1 text-sm text-blue-400 hover:text-blue-300 transition-colors"
+                            >
+                                LinkedIn <ExternalLink className="h-3 w-3" />
+                            </a>
+                        </div>
+                        <p className="text-sm text-zinc-500 mb-6">Founder, Ahead of the Wave AI · Enterprise AI Seminar Leader</p>
+                        <p className="text-zinc-400 leading-relaxed max-w-prose">
+                            Christoph brings enterprise-scale AI training experience across multiple countries to the partnership. Where Critical AI Solutions works from the inside of classical education outward, Christoph brings the perspective of organizations that have already navigated large-scale AI adoption. Together, the partnership covers both the depth of school culture and the breadth of institutional change.
+                        </p>
+                    </motion.div>
                 </motion.div>
             </Container>
         </section>
