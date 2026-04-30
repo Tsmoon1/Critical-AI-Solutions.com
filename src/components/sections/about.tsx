@@ -63,7 +63,7 @@ export function About() {
                         </div>
                         <p className="text-sm text-zinc-500 mb-6">Founder, Ahead of the Wave AI · Enterprise AI Seminar Leader</p>
                         <p className="text-zinc-400 leading-relaxed max-w-prose">
-                            Christoph brings enterprise-scale AI training experience across multiple countries to the partnership. Where Critical AI Solutions works from the inside of classical education outward, Christoph brings the perspective of organizations that have already navigated large-scale AI adoption. Together, the partnership covers both the depth of school culture and the breadth of institutional change.
+                            Christoph brings enterprise-scale AI training experience across multiple countries to the partnership. Where Critical AI Solutions focuses primarily on education, Christoph brings the perspective of enterprise organizations that have already navigated large-scale AI adoption. Together, the partnership covers both the depth of school culture and the breadth of institutional change.
                         </p>
                     </motion.div>
                 </motion.div>
