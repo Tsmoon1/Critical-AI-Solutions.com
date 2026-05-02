@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import { Container } from "@/components/ui/container";
 
 export function About() {
@@ -15,14 +16,30 @@ export function About() {
                     className="mx-auto max-w-3xl"
                 >
                     <h2 className="text-sm font-mono text-blue-500 mb-2">WHO&apos;S BEHIND THIS</h2>
-                    <h3 className="text-2xl font-bold text-white mb-1">Tim Moon</h3>
-                    <p className="text-sm text-zinc-500 mb-6">Former Dean of Rhetoric · AI Liaison, Wayland Baptist University · Founder, VoiceArc</p>
-                    <p className="text-zinc-400 leading-relaxed mb-4 max-w-prose">
-                        I spent twenty-five years inside classical education as a teacher, Dean of Rhetoric, and school leader, watching institutions spend heavily on technology that promised transformation and delivered distraction. The EdTech failure rate mirrors every other AI failure rate: organizations reach for tools before they understand their processes.
-                    </p>
-                    <p className="text-zinc-400 leading-relaxed mb-10 max-w-prose">
-                        I now serve as AI Liaison and Adjunct Professor at Wayland Baptist University, teach a Professional Readiness course integrating AI literacy, and founded <em className="text-zinc-300 not-italic font-medium">VoiceArc</em>, an AI-assisted rhetoric analysis tool for writing teachers. I write about the intersection of classical education and artificial intelligence at <em className="text-zinc-300 not-italic font-medium">Silicon and Soul</em>. I founded Critical AI Solutions to help schools navigate AI the way a classical educator should: asking better questions first.
-                    </p>
+
+                    <div className="flex flex-col sm:flex-row gap-8 mb-10">
+                        <div className="shrink-0">
+                            <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden ring-1 ring-slate-700">
+                                <Image
+                                    src="/tim-moon.png"
+                                    alt="Tim Moon"
+                                    fill
+                                    className="object-cover object-top"
+                                    sizes="(max-width: 640px) 144px, 176px"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <h3 className="text-2xl font-bold text-white mb-1">Tim Moon</h3>
+                            <p className="text-sm text-zinc-500 mb-4">Former Dean of Rhetoric · AI Liaison, Wayland Baptist University · Founder, VoiceArc</p>
+                            <p className="text-zinc-400 leading-relaxed mb-4 max-w-prose">
+                                I spent twenty-five years inside classical education as a teacher, Dean of Rhetoric, and school leader, watching institutions spend heavily on technology that promised transformation and delivered distraction. The EdTech failure rate mirrors every other AI failure rate: organizations reach for tools before they understand their processes.
+                            </p>
+                            <p className="text-zinc-400 leading-relaxed max-w-prose">
+                                I now serve as AI Liaison and Adjunct Professor at Wayland Baptist University, teach a Professional Readiness course integrating AI literacy, and founded <em className="text-zinc-300 not-italic font-medium">VoiceArc</em>, an AI-assisted rhetoric analysis tool for writing teachers. I write about the intersection of classical education and artificial intelligence at <em className="text-zinc-300 not-italic font-medium">Silicon and Soul</em>. I founded Critical AI Solutions to help schools navigate AI the way a classical educator should: asking better questions first.
+                            </p>
+                        </div>
+                    </div>
 
                     <motion.blockquote
                         initial={{ opacity: 0, y: 20 }}
